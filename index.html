@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To do list</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+
+    <header class="app__head">
+      <h1 class="app__title">Mes taches</h1>
+      <p id="counter" class="app__counter">0 sur 0 terminees</p>
+    </header>
+
+    <section class="card">
+
+      <form id="todo-form" class="add-row">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Ajouter une tache..."
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn--primary">Ajouter</button>
+      </form>
+
+      <p id="error-msg" class="error-msg"></p>
+
+      <!-- Conteneur vide : les taches sont creees en JS dans une boucle -->
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <p id="empty-msg" class="empty-msg">Aucune tache pour le moment</p>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* ---------- Variables ---------- */
+:root {
+  --bg: #eceff5;
+  --card: #ffffff;
+  --ink: #14213d;
+  --ink-soft: #5a6484;
+  --ink-muted: #9aa2ba;
+  --line: #dde2ec;
+  --accent: #3a56d4;
+  --accent-soft: #e7ebfd;
+  --success: #1f7a52;
+  --danger: #b03030;
+  --danger-soft: #fceaea;
+  --radius: 10px;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* ---------- En-tete ---------- */
+.app__head {
+  margin-bottom: 1.25rem;
+}
+
+.app__title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app__counter {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* ---------- Carte ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: clamp(1.1rem, 4vw, 1.5rem);
+}
+
+/* ---------- Formulaire d'ajout ---------- */
+.add-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#todo-input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+#todo-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--card);
+}
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  padding: 0.65rem 1.1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Message d'erreur ---------- */
+.error-msg {
+  min-height: 1.1rem;
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Liste ---------- */
+.todo-list {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.75rem;
+}
+
+.todo-item__check {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--ink-muted);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.todo-item.is-done .todo-item__check {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.todo-item__text {
+  flex: 1;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.todo-item.is-done .todo-item__text {
+  text-decoration: line-through;
+  color: var(--ink-muted);
+}
+
+.todo-item__delete {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--ink-muted);
+  padding: 0.2rem;
+  line-height: 1;
+}
+
+.todo-item__delete:hover {
+  color: var(--danger);
+}
+
+/* ---------- Etat vide ---------- */
+.empty-msg {
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  padding: 1rem 0 0.25rem;
+}
+
+.empty-msg.is-hidden,
+.todo-list.is-hidden {
+  display: none;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 420px) {
+  body {
+    padding: 1.25rem 0.75rem 3rem;
+  }
+
+  .add-row {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
