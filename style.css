@@ -38,18 +38,18 @@ body {
 }
 
 /* ---------- En-tete ---------- */
-.app__head {
+.app-head {
   margin-bottom: 1.25rem;
 }
 
-.app__title {
+.app-title {
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.6rem, 5vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-.app__counter {
+.app-counter {
   color: var(--ink-soft);
   font-size: 0.9rem;
 }
@@ -129,7 +129,7 @@ body {
   padding: 0.65rem 0.75rem;
 }
 
-.todo-item__check {
+.todo-item-check {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -145,23 +145,23 @@ body {
   line-height: 1;
 }
 
-.todo-item.is-done .todo-item__check {
+.todo-item.is-done .todo-item-check {
   background: var(--success);
   border-color: var(--success);
 }
 
-.todo-item__text {
+.todo-item-text {
   flex: 1;
   font-size: 0.95rem;
   word-break: break-word;
 }
 
-.todo-item.is-done .todo-item__text {
+.todo-item.is-done .todo-item-text {
   text-decoration: line-through;
   color: var(--ink-muted);
 }
 
-.todo-item__delete {
+.todo-item-delete {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -171,7 +171,7 @@ body {
   line-height: 1;
 }
 
-.todo-item__delete:hover {
+.todo-item-delete:hover {
   color: var(--danger);
 }
 

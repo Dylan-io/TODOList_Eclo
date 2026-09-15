@@ -51,7 +51,7 @@ function render() {
     li.className = "todo-item" + (todo.done ? " is-done" : "");
 
     const checkBtn = document.createElement("button");
-    checkBtn.className = "todo-item__check";
+    checkBtn.className = "todo-item-check";
     checkBtn.setAttribute("aria-label", "Marquer comme terminee");
     checkBtn.textContent = todo.done ? "\u2713" : "";
     checkBtn.addEventListener("click", function () {
@@ -59,11 +59,11 @@ function render() {
     });
 
     const span = document.createElement("span");
-    span.className = "todo-item__text";
+    span.className = "todo-item-text";
     span.textContent = todo.text;
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.className = "todo-item__delete";
+    deleteBtn.className = "todo-item-delete";
     deleteBtn.setAttribute("aria-label", "Supprimer la tache");
     deleteBtn.textContent = "\u2715";
     deleteBtn.addEventListener("click", function () {
