@@ -122,32 +122,17 @@ body {
 .todo-item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 0.65rem 0.75rem;
 }
 
-.todo-item-check {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  border: 1.5px solid var(--ink-muted);
-  border-radius: 6px;
-  background: transparent;
-  cursor: pointer;
+.todo-item-actions {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 13px;
-  line-height: 1;
-}
-
-.todo-item.is-done .todo-item-check {
-  background: var(--success);
-  border-color: var(--success);
+  flex-shrink: 0;
+  gap: 0.4rem;
 }
 
 .todo-item-text {
@@ -161,18 +146,45 @@ body {
   color: var(--ink-muted);
 }
 
+.todo-item-done,
 .todo-item-delete {
-  background: transparent;
-  border: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
   cursor: pointer;
-  font-size: 1.1rem;
-  color: var(--ink-muted);
-  padding: 0.2rem;
-  line-height: 1;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.2;
+}
+
+.todo-item-done {
+  color: var(--success);
+  background: #e8f5ee;
+}
+
+.todo-item-done:hover {
+  border-color: var(--success);
+}
+
+.todo-item-delete {
+  color: var(--danger);
+  background: var(--danger-soft);
 }
 
 .todo-item-delete:hover {
-  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.todo-item-delete:focus-visible,
+.todo-item-done:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Keep the actions compact on small screens. */
+.todo-item-delete {
+  cursor: pointer;
 }
 
 /* ---------- Etat vide ---------- */
