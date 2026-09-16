@@ -1,12 +1,8 @@
-/* ============================================
-   1. L'etat : le tableau des taches
-   ============================================ */
+// 1. L'etat : le tableau des taches
 let todos = [];
 let nextId = 1;
 
-/* ============================================
-   2. Les elements du DOM
-   ============================================ */
+// 2. Les elements du DOM
 const form = document.getElementById("todo-form");
 const input = document.getElementById("todo-input");
 const list = document.getElementById("todo-list");
@@ -14,9 +10,7 @@ const counter = document.getElementById("counter");
 const errorMsg = document.getElementById("error-msg");
 const emptyMsg = document.getElementById("empty-msg");
 
-/* ============================================
-   3. Ajouter une tache
-   ============================================ */
+// 3. Ajouter une tache
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -40,9 +34,7 @@ form.addEventListener("submit", function (event) {
   render();
 });
 
-/* ============================================
-   4. Afficher la liste (render)
-   ============================================ */
+// 4. Afficher la liste (render)
 function render() {
   list.innerHTML = "";
 
@@ -80,9 +72,7 @@ function render() {
   updateEmptyState();
 }
 
-/* ============================================
-   5. Cocher / decocher une tache
-   ============================================ */
+// 5. Cocher / decocher une tache
 function toggleTodo(id) {
   const todo = todos.find(function (t) {
     return t.id === id;
@@ -91,9 +81,7 @@ function toggleTodo(id) {
   render();
 }
 
-/* ============================================
-   6. Supprimer une tache
-   ============================================ */
+// 6. Supprimer une tache
 function deleteTodo(id) {
   todos = todos.filter(function (t) {
     return t.id !== id;
@@ -101,9 +89,7 @@ function deleteTodo(id) {
   render();
 }
 
-/* ============================================
-   7. Compteur "x sur y terminees"
-   ============================================ */
+// 7. Compteur "x sur y terminees"
 function updateCounter() {
   const doneCount = todos.filter(function (t) {
     return t.done;
@@ -112,9 +98,7 @@ function updateCounter() {
   counter.textContent = `${doneCount} sur ${todos.length} terminees`;
 }
 
-/* ============================================
-   8. Message "aucune tache"
-   ============================================ */
+// 8. Message "aucune tache"
 function updateEmptyState() {
   if (todos.length === 0) {
     emptyMsg.classList.remove("is-hidden");
@@ -125,7 +109,5 @@ function updateEmptyState() {
   }
 }
 
-/* ============================================
-   9. Demarrage
-   ============================================ */
+// 9. Demarrage
 render();
